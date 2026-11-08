@@ -25,7 +25,17 @@ public class HomeWork3 {
                 "tom@mail.com.",
                 "ann@site.org",
                 "@mail.com",
-                "first.last@my-server.com"
-        };
+                "first.last@my-server.com"};
+        for (int i=0;i<emails.length;i++){
+            int firstAt = emails[i].indexOf('@');
+            if (firstAt != -1 && firstAt == emails[i].lastIndexOf('@')){
+                int charsBefore = firstAt;
+                int charsAfter = emails[i].length() - (firstAt + 1);
+                int dotAfterAt = emails[i].lastIndexOf('.', firstAt + 1);
+                if (charsBefore >= 3 && charsAfter >= 5 && dotAfterAt != -1 && !emails[i].startsWith(".") && !emails[i].endsWith(".")){
+                System.out.println(emails[i]);
+                 }
+             }
+        }
     }
 }
